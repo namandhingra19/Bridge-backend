@@ -7,7 +7,7 @@
     "build": "tsc",
     "watch": "tsc -w",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "start": "node dist/index.js",
+    "start": "nodemon --exec ts-node src/index.ts",
     "test": "jest"
   },
   "keywords": [],
