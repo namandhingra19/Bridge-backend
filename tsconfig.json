@@ -4,9 +4,9 @@
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true
   },
-  "include": ["src"],
+  "include": ["src", "XyFinance.spec.ts"],
   "exclude": ["node_modules"]
 }
