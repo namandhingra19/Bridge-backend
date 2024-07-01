@@ -1,5 +1,5 @@
 import axios from "axios";
-import { XY_FINANCE_API_BASE_URL } from "../constants/apiEndPoints";
+import { XY_FINANCE_API_BASE_URL, XY_FINANCE_API_DEFAULT_RECEIVER } from "../constants/apiEndPoints";
 
 const generateQueryParams = (quoteResult: any) => {
   let queryParams = "";
@@ -28,7 +28,6 @@ const generateQueryParams = (quoteResult: any) => {
     )}&`;
   }
 
-  // Remove trailing '&' if present
   if (queryParams.endsWith("&")) {
     queryParams = queryParams.slice(0, -1);
   }
@@ -104,7 +103,7 @@ export default class XyFinanceService {
           data.qoute.dstChainId
         }&dstQuoteTokenAddress=${
           data.qoute.dstQuoteTokenAddress
-        }&slippage=1&receiver=0xb6EFA1C3679f1943f8aC4Fc9463Cc492435c6C92&${generateQueryParams(
+        }&slippage=1&receiver=${XY_FINANCE_API_DEFAULT_RECEIVER}&${generateQueryParams(
           data.qoute
         )}`
       );
